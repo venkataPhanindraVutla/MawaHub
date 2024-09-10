@@ -51,11 +51,11 @@
         </div>
         <button type="submit">Sign Up</button>
         <div class="signUp-link">
-          <p>Already have an account? <a href="#" class="signInBtn-link">Sign In</a></p>
+          <p>Already have an account? <a href="{% url'home' %}" class="signInBtn-link">Sign In</a></p>
         </div>
       </form>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="{% static "js/register.js" %}"></script>
 </body>
 </html>
