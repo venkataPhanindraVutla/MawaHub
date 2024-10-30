@@ -15,9 +15,24 @@
             <div class="post-meta">
                 <span> {{ i.author }} : {{ i.question }} </span>
                 <span>2 <i class="bi bi-chat-left-text"></i></span>
-                <span> {{ i.date }} </span>
+                
             </div>
             <div class="post-meta">
+                <span> {{ i.date }} </span>
+                <span>Score: {{ i.score }}</span>
+            </div>
+        </div>
+        {% endfor %}
+        {% for i in resp %}
+        <div class="post-card">
+            <div class="post-title">{{ i.title }}</div>
+            <div class="post-meta">
+                <span> {{ i.author }} : {{ i.question }} </span>
+                <span>2 <i class="bi bi-chat-left-text"></i></span>
+                
+            </div>
+            <div class="post-meta">
+                <span> {{ i.date }} </span>
                 <span>Score: {{ i.score }}</span>
             </div>
         </div>

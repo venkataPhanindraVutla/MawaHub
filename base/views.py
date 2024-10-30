@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import *
 
 # Create your views here.
 def home(request):
@@ -10,6 +11,7 @@ def register(request):
     return render(request,'register.html')
 
 def all_questions(request):
+    resp = questions.objects.all()
     dic =[
         {
             "title": "How to build a StackOverflow clone?",
@@ -26,4 +28,4 @@ def all_questions(request):
             "score": 1,
         }
         ]
-    return render(request,'all_questions.html',{'questions':dic})
+    return render(request,'all_questions.html',{'questions':dic,"resp":resp})
