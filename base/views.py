@@ -9,6 +9,9 @@ def login(request):
 def register(request):
     return render(request,'register.html')
 
+def sidebar(request):
+    return render(request,'sidebar.html')
+
 def all_questions(request):
     dic =[
         {
