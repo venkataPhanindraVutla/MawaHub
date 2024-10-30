@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/all_questions.css' %}">
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+<div class="content">
+    <div class="container card-container">
+        <!-- Search and New Post -->
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search or create a post...">
+        </div>
+        {% for i in questions %}
+        <div class="post-card">
+            <div class="post-title">{{ i.title }}</div>
+            <div class="post-meta">
+                <span> {{ i.author }} : {{ i.question }} </span>
+                <span>2 <i class="bi bi-chat-left-text"></i></span>
+                <span> {{ i.date }} </span>
+            </div>
+            <div class="post-meta">
+                <span>Score: {{ i.score }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
