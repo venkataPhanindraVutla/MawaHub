@@ -6,7 +6,7 @@ from users.models import Student
 class Question(models.Model):
     title = models.CharField(max_length=200)
     question = models.TextField()
-    # author = models.ForeignKey(Student, on_delete=models.CASCADE)
+    author = models.ForeignKey(Student, on_delete=models.CASCADE)
     date = models.DateTimeField(default=timezone.now)
     score = models.IntegerField(default=0)
 

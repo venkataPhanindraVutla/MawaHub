@@ -3,7 +3,9 @@ from .models import Question, Answer
 
 # Create your views here.
 def questions(request):
-    return render(request, "questions.html")
+    return render(request, "all_questions.html", {
+        "questions": Question.objects.all()
+    })
 
 def question(request, question_id):
     question = Question.objects.get(pk=question_id)

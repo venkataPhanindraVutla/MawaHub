@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load mytags %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/all_questions.css' %}">
 <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -10,15 +11,15 @@
             <input type="text" class="search-input" placeholder="Search or create a post...">
         </div>
         {% for i in questions %}
-        <div class="post-card">
+        <div class="post-card" onclick="window.location.href='{% url 'question' question_id=i.id %}'">
             <div class="post-title">{{ i.title }}</div>
             <div class="post-meta">
-                <span> {{ i.author }} : {{ i.question }} </span>
-                <span>2 <i class="bi bi-chat-left-text"></i></span>
+                <span> {{ i.author.name }} : {{ i.question }} </span>
+                <span>{{ i.answer_set.all | length }}</span> <i class="bi bi-chat-left-text"></i>
                 
             </div>
             <div class="post-meta">
-                <span> {{ i.date }} </span>
+                <span> {{ i.date | to_timeago }} </span>
                 <span>Score: {{ i.score }}</span>
             </div>
         </div>

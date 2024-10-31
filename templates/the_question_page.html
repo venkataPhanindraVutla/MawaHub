@@ -1,4 +1,4 @@
-{% extends "root.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% load mytags %}
 
@@ -12,7 +12,7 @@
   <div class="card mb-4">
       <div class="answer-header">
           <img src="https://via.placeholder.com/35" alt="User Avatar" class="user-avatar">
-          <h6 class="card-subtitle">{{ question.author.username }}</h6><span class="muted">{{ question.date | to_timeago }}</span>
+          <h6 class="card-subtitle">{{ question.author.name }}</h6><span class="muted">{{ question.date | to_timeago }}</span>
     </div>
     <h4 class="card-title">{{ question.title }}</h4>
     <p class="card-text">{{ question.question }}</p>
@@ -26,12 +26,11 @@
   <!-- Answers Section -->
   <h5 class="mb-3">Answers</h5>
   <div class="answers-section">
-    <!-- Single Answer -->
     {% for answer in answers %}
       <div class="card">
         <div class="answer-header">
           <img src="https://via.placeholder.com/35" alt="User Avatar" class="user-avatar">
-          <h6 class="card-subtitle">{{ answer.author.username }}</h6><span class="muted">{{ answer.date | to_timeago }}</span>
+          <h6 class="card-subtitle">{{ answer.author.name }}</h6><span class="muted">{{ answer.date | to_timeago }}</span>
         </div>
         <pre class="card-text">{{ answer.answer }}</pre>
         <div class="votes">
