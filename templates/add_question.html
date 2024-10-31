@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Your Question</title>
+    {% load static %}
+    <link href="{% static 'css/add_question.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/register.js' %}"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Post Your Question</h1>
+    <form id="questionForm" action="#" method="POST" onsubmit="confirmSubmission(event)">
+        <label for="tags">Question Tag:</label>
+        <input type="text" id="tags" name="tags" required placeholder="Enter tag">
+        <label for="question">Your Question:</label>
+        <textarea id="question" name="question" required placeholder="Type your question here..."></textarea>
+
+        <input type="submit" value="Submit Question" ></centre>
+    </form>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p>Are you ready to submit your question?</p>
+        <button onclick="submitForm(document.getElementById('questionForm'))">Yes</button>
+        <button onclick="closeModal()">No</button>
+    </div>
+</div>
+
+</body>
+</html>

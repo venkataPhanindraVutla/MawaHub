@@ -1,4 +1,11 @@
 /* General Body Styling */
+:root {
+    --color-default: #000000;
+    --color-second: #0067ac;
+    --color-white: #595959;
+    --color-text: #d1d1d1;
+    --color-body: #3e3e3e;
+}
 body {
     margin-top: 20px;
     background-color: black;
@@ -90,7 +97,6 @@ body {
     border: 1px solid #bbb;
 }
 
-/* Grid Component */
 .grid {
     position: relative;
     width: 100%;
@@ -511,4 +517,16 @@ html {
 
 .fa:hover {
     color: #0d6efd; /* Change color on hover */
+}
+
+strong{
+    color: var(--color-second);
+}
+.name{
+    color: #656d4a;
+    font-size: larger;
+    font-weight: bold;
+    text-decoration: underline;
+    /* background-color: var(--color-text); */
+   
 }

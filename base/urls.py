@@ -7,4 +7,6 @@ urlpatterns = [
     path("register", views.register, name="register"),
     path("all_questions", views.all_questions, name="all_questions"),
     path("sidebar", views.sidebar, name="sidebar"),
+    path("user", views.user, name="user"),
+    path("add_question",views.add_question, name="add_question"),
 ]

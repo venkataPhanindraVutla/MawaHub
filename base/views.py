@@ -14,6 +14,9 @@ def sidebar(request):
     return render(request,'sidebar.html')
 
 
+def add_question(request):
+    return render(request,'add_question.html')
+
 def all_questions(request):
     resp = questions.objects.all()
     dic =[
