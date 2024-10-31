@@ -38,3 +38,17 @@ def all_questions(request):
         }
         ]
     return render(request,'all_questions.html',{'questions':dic,"resp":resp})
+
+def update_profile(request):
+    if request.method == 'POST':
+        # Fetch and update profile details
+        request.user.profile.username = request.POST['username']
+        request.user.profile.email = request.POST['email']
+        request.user.profile.about = request.POST['about']
+        request.user.profile.skills = request.POST['skills']
+        request.user.profile.address = request.POST['address']
+        request.user.profile.phone = request.POST['phone']
+        request.user.profile.reputation = request.POST['reputation']
+        request.user.profile.save()
+        return redirect('user_profile')
+    return render(request, 'edit_profile.html')

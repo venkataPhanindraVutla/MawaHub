@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
+    <script src="{% static 'js/edit_profile.js' %}"></script>
+</head>
+<body>
+<div class="container mt-4">
+    <h2>Edit Profile</h2>
+    <form action="{% url 'update_profile' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div class="form-group mt-3 text-center">
+            <img src="{{ user.profile.image.url|default:'https://bootdey.com/img/Content/avatar/avatar1.png' }}" class="img-thumbnail" alt="Profile Image" width="150">
+            <input type="file" id="profile_image" name="profile_image" class="form-control-file mt-2">
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 form-group mt-3">
+                <label for="username">Name:</label>
+                <input type="text" id="username" name="username" class="form-control" value="Hrithik Roshan">
+            </div>
+
+            <div class="col-md-6 form-group mt-3">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" value="email@gmail.com">
+            </div>
+
+            <div class="col-md-6 form-group mt-3">
+                <label for="about">About:</label>
+                <select id="about" name="about" class="form-control">
+                    <option value="Web Designer" selected>Web Designer</option>
+                    <option value="UI Designer">UI Designer</option>
+                    <option value="Software Developer">Software Developer</option>
+                    <option value="Data Scientist">Data Scientist</option>
+                    <option value="Project Manager">Project Manager</option>
+                    <option value="Graphic Designer">Graphic Designer</option>
+                    <option value="Content Writer">Content Writer</option>
+                    <option value="Digital Marketer">Digital Marketer</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>             
+
+            <div class="col-md-6 form-group mt-3">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" class="form-control" value="xyz City, NY, USA">
+            </div>
+
+            <div class="col-md-6 form-group mt-3">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" class="form-control" value="(123) 456-5644">
+            </div>
+
+            <div class="col-md-6 form-group mt-3">
+                <label for="reputation">Reputation:</label>
+                <input type="number" id="reputation" name="reputation" class="form-control" value="1600">
+            </div>
+        </div>
+        <div class="col-md-6 form-group mt-3">
+            <div class="dropdown-checkbox">
+                <label style="color: #d1d1d1;">Skills :</label>
+                <ul>
+                <li><input type="checkbox" id="option1-checkbox"> Python</li>
+                <li><input type="checkbox" id="option2-checkbox"> Java</li>
+                <li><input type="checkbox" id="option3-checkbox"> C</li>
+                </ul>
+                <ul>
+                    <li><input type="checkbox" id="option1-checkbox"> HTML</li>
+                    <li><input type="checkbox" id="option2-checkbox"> CSS</li>
+                    <li><input type="checkbox" id="option3-checkbox"> JavaScript</li>
+                </ul>
+                <ul>
+                    <li><input type="checkbox" id="option1-checkbox"> Django</li>
+                    <li><input type="checkbox" id="option2-checkbox"> Node JS</li>
+                    <li><input type="checkbox" id="option3-checkbox"> PHP</li>
+                </ul>
+                <ul>
+                    <li><input type="checkbox" id="option1-checkbox"> Flutter</li>
+                    <li><input type="checkbox" id="option2-checkbox"> Kotlin</li>
+                    <li><input type="checkbox" id="option3-checkbox"> React Native</li>
+                </ul>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4">Save Changes</button>
+    </form>
+</div>
+</body>
+</html>

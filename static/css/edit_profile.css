@@ -1,0 +1,97 @@
+/* edit_profile.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #d1d1d1;
+}
+
+.container {
+    max-width: 700px;
+    background: #1e1e1e;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #d1d1d1;
+    border-bottom: 2px solid #dedede;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #d1d1d1;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.form-control-file {
+    margin-top: 0.5rem;
+}
+
+.img-thumbnail {
+    border-radius: 50%;
+    border: 2px solid #dedede;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.dropdown-checkbox {
+    margin-top: 1.5rem;
+}
+
+.dropdown-checkbox label {
+    font-weight: bold;
+    color: #666;
+}
+
+.dropdown-checkbox ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-checkbox ul li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+.dropdown-checkbox input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+label{
+    color: #d1d1d1;
+}
