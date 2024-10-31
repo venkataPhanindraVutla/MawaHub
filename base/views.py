@@ -13,8 +13,6 @@ def register(request):
 def sidebar(request):
     return render(request,'sidebar.html')
 
-def user(request):
-    return render(request,'user.html')
 
 def all_questions(request):
     resp = questions.objects.all()
