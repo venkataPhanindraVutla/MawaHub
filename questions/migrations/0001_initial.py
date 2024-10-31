@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
 
     initial = True
 
+<<<<<<< HEAD
     dependencies = []
 
     operations = [
@@ -53,6 +54,32 @@ class Migration(migrations.Migration):
                         to="questions.question",
                     ),
                 ),
+=======
+    dependencies = [
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name='Question',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('title', models.CharField(max_length=200)),
+                ('question', models.TextField()),
+                ('author', models.CharField(max_length=200)),
+                ('date', models.DateField()),
+                ('score', models.IntegerField()),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Answer',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('answer', models.TextField()),
+                ('author', models.CharField(max_length=200)),
+                ('date', models.DateField()),
+                ('score', models.IntegerField()),
+                ('question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='questions.question')),
+>>>>>>> 1b9f03b (feat: get question and answers data from database)
             ],
         ),
     ]

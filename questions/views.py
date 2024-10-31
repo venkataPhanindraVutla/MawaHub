@@ -7,7 +7,7 @@ def questions(request):
 
 def question(request, question_id):
     question = Question.objects.get(pk=question_id)
-    answers = Question.answer_set.all()
+    answers = question.answer_set.all()
     return render(request, "the_question_page.html", {
         "question": question,
         "answers": answers
