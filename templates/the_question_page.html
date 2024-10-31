@@ -1,5 +1,6 @@
 {% extends "root.html" %}
 {% load static %}
+{% load mytags %}
 
 {% block stylesheet %}
 <link rel="stylesheet" href="{% static 'css/the_question_page.css' %}">
@@ -11,51 +12,36 @@
   <div class="card mb-4">
       <div class="answer-header">
           <img src="https://via.placeholder.com/35" alt="User Avatar" class="user-avatar">
-          <h6 class="card-subtitle">Neo</h6><span class="muted">Oct 29, 2024</span>
+          <h6 class="card-subtitle">{{ question.author.username }}</h6><span class="muted">{{ question.date | to_timeago }}</span>
     </div>
-    <h4 class="card-title">What is the main difference between HTML and XML?</h4>
-    <p class="card-text">
-      HTML and XML serve different purposes in web development. HTML is used for web page structure, while XML is for data storage and transfer. XML syntax is stricter.
-    </p>
+    <h4 class="card-title">{{ question.title }}</h4>
+    <p class="card-text">{{ question.question }}</p>
     <div class="votes">
       <button type="button" class="upvote">⬆</button>
-      <span class="score">45</span>
+      <span class="score">{{ question.score }}</span>
       <button type="button" class="downvote">⬇</button>
     </div>
   </div>
 
   <!-- Answers Section -->
-    <h5 class="mb-3">Answers</h5>
+  <h5 class="mb-3">Answers</h5>
   <div class="answers-section">
     <!-- Single Answer -->
-    <div class="card">
-      <div class="answer-header">
-        <img src="https://via.placeholder.com/35" alt="User Avatar" class="user-avatar">
-        <h6 class="card-subtitle">Jane Smith</h6><span class="muted">Oct 29, 2024</span>
+    {% for answer in answers %}
+      <div class="card">
+        <div class="answer-header">
+          <img src="https://via.placeholder.com/35" alt="User Avatar" class="user-avatar">
+          <h6 class="card-subtitle">{{ answer.author.username }}</h6><span class="muted">{{ answer.date | to_timeago }}</span>
+        </div>
+        <pre class="card-text">{{ answer.answer }}</pre>
+        <div class="votes">
+          <button type="button" class="upvote">⬆</button>
+          <span class="score">{{ answer.score }}</span>
+          <button type="button" class="downvote">⬇</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm ml-auto reply-btn">Reply</button>
+        </div>
       </div>
-      <p class="card-text">HTML is primarily used for web display, while XML is meant for data storage. They have different purposes and structures.</p>
-      <div class="votes">
-        <button type="button" class="upvote">⬆</button>
-        <span class="score">32</span>
-        <button type="button" class="downvote">⬇</button>
-        <button type="button" class="btn btn-outline-secondary btn-sm ml-auto reply-btn">Reply</button>
-      </div>
-    </div>
-
-    <!-- Additional Answer -->
-    <div class="card">
-      <div class="answer-header">
-        <img src="https://via.placeholder.com/35" alt="User Avatar" class="user-avatar">
-        <h6 class="card-subtitle">Michael Lee </h6><span class="muted">Oct 28, 2024</span>
-      </div>
-      <p class="card-text">XML is designed to store and transfer data with strict syntax rules, whereas HTML structures web content.</p>
-      <div class="votes">
-        <button type="button" class="upvote">⬆</button>
-        <span class="score">10</span>
-        <button type="button" class="downvote">⬇</button>
-        <button type="button" class="btn btn-outline-secondary btn-sm reply-btn">Reply</button>
-      </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
 {% endblock content %}
