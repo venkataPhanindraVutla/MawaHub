@@ -1,20 +1,2 @@
 from django.db import models
 
-class UserProfile(models.Model):
-    name = models.CharField(max_length=100)
-    # avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
-    job_title = models.CharField(max_length=100)
-    city = models.CharField(max_length=100)
-    state = models.CharField(max_length=50)
-    country = models.CharField(max_length=50)
-    email = models.EmailField()
-    about = models.TextField()
-    joined_on = models.DateField()
-    hobbies = models.TextField()
-    skills = models.TextField()
-    address = models.CharField(max_length=200)
-    phone = models.CharField(max_length=15)
-    reputation = models.IntegerField(default=0)
-    rating = models.DecimalField(max_digits=4, decimal_places=1, null=True, blank=True)
-    answers_posted = models.PositiveIntegerField(default=0)
-    questions_posted = models.PositiveIntegerField(default=0)

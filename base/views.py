@@ -13,8 +13,6 @@ def register(request):
 def sidebar(request):
     return render(request,'sidebar.html')
 
-def user(request):
-    return render(request,'user.html')
 
 def add_question(request):
     return render(request,'add_question.html')
