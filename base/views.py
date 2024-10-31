@@ -3,7 +3,7 @@ from .models import *
 
 # Create your views here.
 def home(request):
-    return render(request, "base.html")
+    return render(request, "home.html")
 
 def login(request):
     return render(request, "login.html")
@@ -12,6 +12,9 @@ def register(request):
 
 def sidebar(request):
     return render(request,'sidebar.html')
+
+def user(request):
+    return render(request,'user.html')
 
 def all_questions(request):
     resp = questions.objects.all()

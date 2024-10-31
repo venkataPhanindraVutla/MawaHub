@@ -1,14 +1,14 @@
 /* General Body Styling */
 body {
     margin-top: 20px;
-    background: #eee;
+    background-color: black;
 }
 
 /* Profile Section */
 .profile .grid-header {
-    background: url('https://bootdey.com/img/Content/bg1.jpg') no-repeat center center;
+    background:none;
     background-size: cover;
-    color: #f5f5f5;
+    color: #000;
     padding: 20px; /* Added padding for better spacing */
 }
 
@@ -52,7 +52,7 @@ body {
 .profile .stats {
     margin-top: 20px;
     padding: 20px 0;
-    background: #fff; /* Changed from #eee to #fff for better contrast */
+    background: #000; /* Changed from #eee to #fff for better contrast */
     text-align: center;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc; /* Added border-bottom for symmetry */
@@ -83,7 +83,7 @@ body {
 }
 
 .profile .timeline-centered::before {
-    background: #dee2e6; /* Updated color for better visibility */
+    background: #000; /* Updated color for better visibility */
 }
 
 .profile .bg-default {
@@ -94,7 +94,7 @@ body {
 .grid {
     position: relative;
     width: 100%;
-    background: #fff;
+    background: #000;
     color: #666666;
     border-radius: 8px; /* Increased border-radius for smoother corners */
     margin-bottom: 25px;
