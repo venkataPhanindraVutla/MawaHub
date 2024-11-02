@@ -59,12 +59,12 @@ body {
   color: var(--text-color);
   cursor: pointer;
 }
-
+ 
 /* Sidebar styles */
 .sidebar {
   position: fixed;
   width: 16%;
-  background-color: --var(--bg-color);
+  background-color: rgb(23, 22, 22);
   /* background-color: #fdf0d5; */
   color: var(--text-color);
   overflow-y: 100%;
