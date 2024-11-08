@@ -12,9 +12,10 @@
 
 <div class="container">
     <h1>Post Your Question</h1>
-    <form id="questionForm" action="#" method="POST" onsubmit="confirmSubmission(event)">
-        <label for="tags">Question Tag:</label>
-        <input type="text" id="tags" name="tags" required placeholder="Enter tag">
+    <form id="questionForm" action="#" method="POST">
+        {% csrf_token %}
+        <label for="tags">Question Title</label>
+        <input type="text" name="question_title" required placeholder="Enter title">
         <label for="question">Your Question:</label>
         <textarea id="question" name="question" required placeholder="Type your question here..."></textarea>
 

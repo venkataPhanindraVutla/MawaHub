@@ -3,7 +3,7 @@
     --color-second: #0067ac;
     --color-white: #595959;
     --color-text: #d1d1d1;
-    --color-body: #3e3e3e;
+    --color-body: #1e1e1e;
     --color-light: #ffffff;
 }
 body {
@@ -66,11 +66,12 @@ body {
 }
 
 
-.search-bar {
+.top-bar {
     margin-bottom: 15px;
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border-color: var(--color-light);
 }
 
@@ -81,6 +82,22 @@ body {
     border-radius: 20px;
     padding: 10px 15px;
     color: var(--color-white);
-    width: 100%;
-    max-width: 500px;
+    width: 80%;
+    /* max-width: 500px; */
+}
+
+.ask-question-btn {
+    background-color: var(--color-second);
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--color-text);
+    margin:0;
+    text-shadow: none;
+    border-radius: 20px;
+}
+
+.ask-question-btn:hover {
+    background-color: #0176c4;
+    transition: all;
+    transition-duration: 300ms;
 }

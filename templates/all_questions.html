@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load mytags %}
-{% block content %}
+{% block stylesheet %}
 <link rel="stylesheet" href="{% static 'css/all_questions.css' %}">
-<link rel="stylesheet" href="{% static 'css/base.css' %}">
+{% endblock %}
+{% block content %}
 <div class="content">
     <div class="container card-container">
         <!-- Search and New Post -->
-        <div class="search-bar">
+        <div class="top-bar">
             <input type="text" class="search-input" placeholder="Search or create a post...">
+            <a href='{% url "add_question" %}' class="btn ask-question-btn">+ Ask a Question</a>
         </div>
         {% for i in questions %}
         <div class="post-card" onclick="window.location.href='{% url 'question' question_id=i.id %}'">
